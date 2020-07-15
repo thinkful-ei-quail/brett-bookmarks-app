@@ -24,7 +24,6 @@ const store = {
     filter: 0
   };
 
-
 function main(){
     console.log(cuid(), "works")
 }

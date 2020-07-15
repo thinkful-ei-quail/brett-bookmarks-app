@@ -35,6 +35,14 @@ div {
     display:flex;
     flex-direction: column;
 }
+
+.window{
+    
+    height: 300px;
+    justify-content: center;
+
+}
+
 span {
     align-content: right;
 }
