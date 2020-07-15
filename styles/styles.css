@@ -1,0 +1,45 @@
+body {
+        
+    border: 2px solid black;
+    padding: 1%;
+    margin: 0;
+}
+
+header {
+    background-color: rgb(126, 139, 139);
+    margin-bottom: 10px;
+    font-size: x-large;
+    text-align: center;
+    margin: 2%;
+    padding: 2%;
+    border: 2px solid black;
+}
+
+.head {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: space-evenly;
+
+}
+
+div {
+    width: 96%;
+    border: 1px solid black;
+    margin: 1%;
+    padding: 1%;
+
+}
+
+.container {
+    display:flex;
+    flex-direction: column;
+}
+span {
+    align-content: right;
+}
+
+
+.checked {
+    color: orange;
+  }
