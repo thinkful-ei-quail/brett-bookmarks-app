@@ -1,4 +1,4 @@
-"use strict";
+
 import $ from 'jquery';
 import api from "./api.js";
 
@@ -10,8 +10,6 @@ function main() {
 }
 
 console.log(api.getBookmarks());
-
-
 
 
 
