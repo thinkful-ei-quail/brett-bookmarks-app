@@ -6,10 +6,11 @@ import display from "./display.js"
 
 function main() {
   //get bookmarks
-  //render main screen
+ 
+  console.log("bookmarks", api.getAllItems())
   display.renderMain();
-  
   //eventListeners();
+
 }
 
 $(main)

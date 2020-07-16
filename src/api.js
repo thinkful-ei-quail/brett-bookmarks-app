@@ -1,39 +1,72 @@
 
 
-const BASEURL = `https://thinkful-list-api.herokuapp.com`
+const BASEURL = `https://thinkful-list-api.herokuapp.com/brett/bookmarks`
+
+
+const store = {
+    bookmarks: [
+      {
+        id: 'x56w',
+        title: 'Title 1',
+        rating: 3,
+        url: 'http://www.title1.com',
+        description: 'lorem ipsum dolor sit',
+        expanded: false
+      },
+      {
+        id: '6ffw',
+        title: 'Title 2',
+        rating: 5,
+        url: 'http://www.title2.com',
+        description: 'dolorum tempore deserunt',
+        expanded: false
+      } 
+    
+    ],
+    adding: false,
+    error: null,
+    filter: 0
+  };
+
+  function getAllItems(){
+      return callAPI(`${BASEURL}`)
+  }
+
+
+
+  function createBookmark(bookmark) {
+    const newBookmark = JSON.stringify(bookmark);
+    callAPI(`${BASEURL}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: newBookmark
+    });
+  }
 
 function getItemByID(id) {
-    return ``;
+    return ``;// unfinished function 
 }
 
-let fakeResults = [
-    {
-        "id": "8sdfbvbs65sd",
-        "title": "Google",
-        "url": "http://google.com",
-        "desc": "An indie search engine startup",
-        "rating": 4
-    },
-    {
-        "id": "87fn36vd9djd",
-        "title": "Fluffiest Cats in the World",
-        "url": "http://medium.com/bloggerx/fluffiest-cats-334",
-        "desc": "The only list of fluffy cats online",
-        "rating": 5
-    }
-];
-
-function constructItem(item){
-
+function callAPI(...args) {
+    let error;
+    return fetch(...args)
+        .then(response => {
+            if (!response.ok) {
+                //handle errors here
+            }
+            return response.json();
+        }).then(items => {
+                ///insert more error handling here
+            console.log("api call returned: ", items);
+            return items;
+        })
 }
 
-
-
-function getBookmarks() {
-    return (`${BASEURL}/DrBretto/bookmarks`); // []
-}
 
 export default {
-    getBookmarks
-
+    callAPI,
+    getAllItems,
+    createBookmark
 }
