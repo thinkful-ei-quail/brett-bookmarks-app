@@ -1,6 +1,6 @@
 
 import $ from 'jquery';
-import api from "./api.js";
+import api from "./src/api.js";
 
 
 
