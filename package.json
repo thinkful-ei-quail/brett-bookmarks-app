@@ -1,8 +1,8 @@
 {
-  "name": "bookmarkApp",
+  "name": "bookmark-app",
   "version": "1.0.0",
   "description": "Created for the Thinkful EI Program.",
-  "main": "./src/index.js",
+  "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
     "build": "webpack --mode production"
