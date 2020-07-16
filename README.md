@@ -68,13 +68,14 @@ HTML mockups:
     </header>
     <div class="container">
         <form class="head">
-            <button>+New <i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
-            <label for="filter">Filter Results</label>
-            <select name="filter" id="filter">
-                <option value="oneStar">One Star and up</option>
-                <option value="twoStars">Two Stars and up</option>
-                <option value="threeStars">Three or more stars</option>
-                <option value="fourStars">Four or more Stars</option>
+            <button id="newBookmark">+New <i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
+            <select id="dropdown" name="rating">
+                <option disabled value><option>Filter by rating:</option>
+                <option value=5>5 stars</option>
+                <option value=4>4 stars & above</option>
+                <option value=3>3 stars & above</option>
+                <option value=2>2 stars & above</option>
+                <option value=1>1 star & above</option>
             </select>
         </form>
         <div>

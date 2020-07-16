@@ -10,36 +10,51 @@
 </head>
 
 <body>
+
     <header>
         My Bookmarks
     </header>
-
     <div class="container">
-        <form>
-            <label for="newBookmark">Add New Bookmark:</label><br>
-            <input type="text" id="newBookmark" name="newBookmark"><br>
-            
-        <div>    
-            <input type="text" id="newBookmark" name="newBookmark"><br>
-            
-          
-        
-
+        <form class="head">
+            <button id="newBookmark">+New <i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
+            <select id="dropdown" name="rating">
+                <option disabled value><option>Filter by rating:</option>
+                <option value=5>5 stars</option>
+                <option value=4>4 stars & above</option>
+                <option value=3>3 stars & above</option>
+                <option value=2>2 stars & above</option>
+                <option value=1>1 star & above</option>
+            </select>
+        </form>
         <div>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
+            Title:
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
         </div>
-        <button>Cancel</button>
-        <button>Submit</button>
-        </form> 
+        <div>
+            Title: <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+        </div>
+        <div>
+            Title: <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+        </div>
 
-        
     </div>
 
+
     </div>
+
+  
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
