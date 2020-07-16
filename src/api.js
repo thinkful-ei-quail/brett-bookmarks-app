@@ -8,7 +8,7 @@ function getItemByID(id) {
 
 
 function getBookmarks() {
-    return apiFetch(`${BASEURL}/DrBretto/bookmarks`); // []
+    return (`${BASEURL}/DrBretto/bookmarks`); // []
 }
 
 export {
