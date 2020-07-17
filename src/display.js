@@ -1,19 +1,36 @@
 import $ from "jquery";
 import templates from "./templates.js"
-import api from "./api.js"
+import localStore from "./localStore.js"
 
 
 
 //let items = api.getItems();
 
-function renderMain(URL, items) {
-       
-    $("body").html(templates.mainScreen);
+function render() {
+    
+    $('body').html(templates.constructListScreen());
+        console.log("worked", templates.constructListScreen())
+/*
+    if (localStore.adding) {        
+        $('main').html(templates.constructAddScreen());
+        console.log(templates.constructAddScreen())
+    } else {
+        $('main').html(templates.constructListScreen());
+        console.log("worked", templates.constructListScreen())
+    }
+   
+*/
 }
+
 
 //function updateItem()
 
+
+
+
+
+
 export default {
-    renderMain
-   
+    render
+
 }
