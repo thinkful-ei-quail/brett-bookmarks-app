@@ -1,13 +1,10 @@
 
-
 const BASEURL = `https://thinkful-list-api.herokuapp.com/brett/bookmarks`
-
 
 function createBookmarksFromArray(bookmarks){
     bookmarks.forEach(bookmark => 
-        updateBookmark(bookmark));
+        createBookmark(bookmark));
 }
-
 
 function getAllItems() {
     return callAPI(`${BASEURL}`)
@@ -25,7 +22,7 @@ function updateBookmark(id, updatedBookmark) {
   }
 
 function createBookmark(bookmark) {
-    
+   
     const newBookmark = JSON.stringify(bookmark);
     callAPI(`${BASEURL}`, {
         method: 'POST',
@@ -59,7 +56,8 @@ function callAPI(...args) {
 export default {
     callAPI,
     getAllItems,
-    createBookmark,
-    createBookmarksFromArray
-   
+    createBookmarksFromArray,
+    updateBookmark,
+    createBookmark
+    
 }

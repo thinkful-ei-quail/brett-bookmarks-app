@@ -1,31 +1,40 @@
 import display from "./display.js"
 import localStore from "./localStore.js"
 
-
 function constructAddScreen() {
-    let output = ``;
-
-
-}
-
-function constructListScreen() {
-    let output = listHeader + `<main id= "listScreen">`;
+    let output = listHeader + `<main>`;/// this is currently a duplicate list screen - don't foget to fix
     for (let i = 0; i < localStore.bookmarks.length; i++) {
         if (localStore.bookmarks[i].expanded) output += expandedBookmark();
         else output += shortBookmark(localStore.bookmarks[i]);
-        //output += shortBookmark();
     };
-    console.log("list screen output", output);
     return output + `</main>`;
 }
 
+function constructListScreen() {
+    let output = listHeader + `<main>`;
+    localStore.bookmarks[1].expanded = true; // temporary line for testing
+    for (let i = 0; i < localStore.bookmarks.length; i++) {
+        if (localStore.bookmarks[i].expanded) output += expandedBookmark(localStore.bookmarks[i]);
+        else output += shortBookmark(localStore.bookmarks[i]);
+    };
+    return output + `<main>`;
+}
 
 function shortBookmark(bookmark) {
-    let output = `<div class= "item">${bookmark.title}:`;
+    let output = `<div class= "item" data-item-id="${bookmark.id}">${bookmark.title}:`;
     for (let i = 1; i <= 5; i++)
         if (i <= bookmark.rating) output += `<span class="fa fa-star checked"></span>`;
         else output += `<span class="fa fa-star"></span>`
+    return output + `</div>`;
+}
 
+function expandedBookmark(bookmark) {
+    
+    let output = `<div class= "expanded" data-item-id="${bookmark.id}"><button>Visit Site</button>
+    <h3>${bookmark.title}:</h3> <p>${bookmark.desc}</p><p>${bookmark.rating}: </p>`
+    for (let i = 1; i <= 5; i++)
+        if (i <= bookmark.rating) output += `<span class="fa fa-star checked"></span>`;
+        else output += `<span class="fa fa-star"></span>`
     return output + `</div>`;
 }
 
@@ -46,31 +55,10 @@ My Bookmarks
     </select>
 </form>`;
 
-
-
-
-let expandedBookmark = `<button>
-Visit Site
-</button>
- <p>
-"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
- </p>
-
- <p>Rating: </p>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star"></span>
-<span class="fa fa-star"></span>`;
-
-
-
-
 export default {
     shortBookmark,
     expandedBookmark,
     listHeader,
     constructAddScreen,
     constructListScreen
-
 }
