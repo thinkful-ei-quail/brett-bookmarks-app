@@ -1,5 +1,4 @@
 body {
-        
     border: 2px solid black;
     padding: 1%;
     margin: 0;
@@ -20,7 +19,6 @@ header {
     flex-direction: row;
     flex: 1;
     justify-content: space-evenly;
-
 }
 
 div {
@@ -28,24 +26,18 @@ div {
     border: 1px solid black;
     margin: 1%;
     padding: 1%;
-
 }
 
 .container {
-    display:flex;
+    display: flex;
     flex-direction: column;
 }
 
-.window{
-    
+.window {
     height: 300px;
     justify-content: center;
-
 }
-
-
-
 
 .checked {
     color: orange;
-  }
+}

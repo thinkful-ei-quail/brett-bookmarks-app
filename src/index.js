@@ -7,8 +7,6 @@ import display from "./display.js"
 import localStore from "./localStore.js"
 import templates from "./templates.js"
 
-
-
 function main() {
 
   api.getAllItems()
@@ -34,12 +32,11 @@ function handleFilterByRating() {
   $('body').on('click', '.head', event => {
     event.preventDefault();
 
-    //console.log("head clicked", event)
+    //console.log("head clicked", event)//////////////////////////////////////////////
     localStore.filterRating = parseInt($(event.target).val());
     display.render();
   });
 };
-
 
 function handleAddCancelButtonClick() {
   $('body').on('click', '#addCancel', event => {
@@ -60,7 +57,7 @@ function handleAddCreateButtonClick() {
     const url = $('#addURL').val();
     const desc = $('#addDescription').val();
 
-    let newBookmark = templates.packObj(title, rating, url, desc);
+    let newBookmark = localStore.packObj(title, rating, url, desc);
     console.log("bookmark is: ", newBookmark)////////////////
     api.createBookmark(newBookmark);
     display.render();
@@ -87,9 +84,5 @@ function handleItemClick() {
     display.render();
   });
 };
-
-
-
-
 
 $(main)
