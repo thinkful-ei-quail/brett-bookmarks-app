@@ -1,3 +1,5 @@
+'use strict';
+
 import $ from "jquery";
 import templates from "./templates.js"
 import localStore from "./localStore.js"
@@ -10,7 +12,7 @@ function render() {
         $('body').html(templates.constructAddScreen());
     
     } else {
-        console.log(templates.constructListScreen());
+        //console.log(templates.constructListScreen());/////////////////////
         $('body').html(templates.constructListScreen());
 
     }

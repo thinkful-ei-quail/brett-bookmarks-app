@@ -1,10 +1,11 @@
+import $ from "jquery";
 
 const BASEURL = `https://thinkful-list-api.herokuapp.com/brett/bookmarks`
 
-function createBookmarksFromArray(bookmarks){
-    bookmarks.forEach(bookmark => 
-        createBookmark(bookmark));
-}
+//function createBookmarksFromArray(bookmarks) {
+ //   bookmarks.forEach(bookmark =>
+   //     createBookmark(bookmark));
+//}
 
 function getAllItems() {
     return callAPI(`${BASEURL}`)
@@ -13,18 +14,18 @@ function getAllItems() {
 function updateBookmark(id, updatedBookmark) {
     const newItem = JSON.stringify(updatedBookmark);
     return callAPI(`${BASEURL}/${id}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: newItem
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: newItem
     });
-  }
+}
 
 function createBookmark(bookmark) {
-   
     const newBookmark = JSON.stringify(bookmark);
-    callAPI(`${BASEURL}`, {
+    console.log("from create bookmark: ", newBookmark);/////////////
+    return callAPI(`${BASEURL}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -33,22 +34,26 @@ function createBookmark(bookmark) {
     });
 }
 
-function getItemByID(id) {
-    return ``;// unfinished function 
-}
+const findAndUpdate = function (id, newData) {//from shopping list for reference
+    const currentItem = this.findById(id);
+    Object.assign(currentItem, newData);
+};
+
+
 
 function callAPI(...args) {
-    let error;
+    let error;////////////////
+
+    console.log("args in api call", ...args)///////////////
     return fetch(...args)
         .then(response => {
-            if (!response.ok) {
-                //handle errors here
-            }
+            if (!response.ok) { throw new Error(response.statusText); }
             return response.json();
         }).then(items => {
-            ///insert more error handling here
-            console.log("api call returned: ", items);
+            console.log("api call returned: ", items);///////////////////////////
             return items;
+        }).catch(err => {
+            $('#js-error-message').text(`Something went wrong: ${err.message}`);
         })
 }
 
@@ -56,8 +61,8 @@ function callAPI(...args) {
 export default {
     callAPI,
     getAllItems,
-    createBookmarksFromArray,
+    //createBookmarksFromArray,
     updateBookmark,
     createBookmark
-    
+
 }
