@@ -17,7 +17,7 @@ function getItemIdFromElement(item) {
     return $(item)
         .closest('.item')
         .data('item-id');
-};
+}
 
 function packObj(title, rating, url, desc) {
     return {
@@ -38,4 +38,4 @@ export default {
     toggleExpanded,
     getItemIdFromElement,
     packObj
-}
+};

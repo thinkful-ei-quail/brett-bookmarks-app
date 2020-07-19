@@ -1,5 +1,3 @@
-'use strict';
-
 const listHeader = `<header>
 My Bookmarks
 </header>
@@ -38,9 +36,9 @@ const addScreen = `
         </div>
     </div>
 </div>
-`
+`;
 
 export default {
     addScreen,
     listHeader
-}
+};

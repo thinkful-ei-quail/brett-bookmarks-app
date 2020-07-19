@@ -32,7 +32,7 @@ function createBookmark(bookmark) {
 function findAndUpdate(id, newData) { //from shopping list for reference
     const currentItem = this.findById(id);
     Object.assign(currentItem, newData);
-};
+}
 
 function callAPI(...args) {
     let error; ////////////////
@@ -54,5 +54,4 @@ export default {
     getAllItems,
     updateBookmark,
     createBookmark
-
 };
