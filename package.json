@@ -30,6 +30,7 @@
   "dependencies": {
     "cuid": "^2.1.8",
     "jquery": "^3.4.1",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "source-map-loader": "^1.0.0"
   }
 }

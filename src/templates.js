@@ -39,6 +39,6 @@ const addScreen = `
 `;
 
 export default {
-    addScreen,
-    listHeader
+  addScreen,
+  listHeader,
 };
