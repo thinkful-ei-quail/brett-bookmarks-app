@@ -5,9 +5,10 @@ let adding = false;
 let error = null;
 let filter = 0;
 
-const findById = (id) => {
+function findById(id) {
+  // ! Had to be "function" format to not break "this"
   return this.bookmarks.find((currentItem) => currentItem.id === id);
-};
+}
 
 const toggleExpanded = (object) => {
   object.expanded = !object.expanded;
@@ -22,7 +23,7 @@ const packObj = (title, rating, url, desc) => {
     title: title,
     rating: rating,
     url: url,
-    description: desc,
+    desc: desc,
     expanded: false,
   };
 };

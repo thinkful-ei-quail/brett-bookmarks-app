@@ -5,10 +5,7 @@ import display from "./display.js";
 import localStore from "./localStore.js";
 
 const main = () => {
-  api.getAllItems().then((response) => {
-    localStore.bookmarks = response;
-    display.render();
-  });
+  display.render(true);
   eventListeners();
 };
 
@@ -32,10 +29,7 @@ const handleAddCancelButtonClick = () => {
   $("body").on("click", "#addCancel", (event) => {
     event.preventDefault();
     localStore.adding = false;
-    api.getAllItems().then((response) => {
-      localStore.bookmarks = response;
-      display.render();
-    });
+    display.render(true);
   });
 };
 
@@ -48,7 +42,7 @@ const handleAddCreateButtonClick = () => {
     const desc = $("#addDescription").val();
     let newBookmark = localStore.packObj(title, rating, url, desc);
     api.createBookmark(newBookmark);
-    display.render();
+    localStore.adding = false;
   });
 };
 
@@ -64,7 +58,9 @@ const handleItemClick = () => {
   $("body").on("click", ".item", (event) => {
     event.preventDefault();
     const id = localStore.getItemIdFromElement(event.currentTarget);
+    //    console.log(id); //////////////////////////////////
     const currentBook = localStore.findById(id);
+    //    console.log(currentBook); /////////////////////////////////
     localStore.toggleExpanded(currentBook);
     display.render();
   });

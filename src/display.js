@@ -1,12 +1,22 @@
 import $ from "jquery";
 import templates from "./templates.js";
 import localStore from "./localStore.js";
+import api from "./api.js";
 
-const render = () => {
+const render = (refresh = false) => {
   if (localStore.adding) {
     $("body").html(constructAddScreen());
   } else {
-    $("body").html(constructListScreen());
+    if (refresh) {
+      console.log("refresh is true");
+      api.getAllItems().then((response) => {
+        localStore.bookmarks = response;
+        $("body").html(constructListScreen());
+      });
+    } else {
+      console.log("refresh is false");
+      $("body").html(constructListScreen());
+    }
   }
 };
 
@@ -34,7 +44,8 @@ const shortBookmark = (bookmark) => {
 };
 
 const expandedBookmark = (bookmark) => {
-  let output = `<div class= "expanded" data-item-id="${bookmark.id}"><button>Visit Site</button>
+  console.log(bookmark); //////////////////////////////
+  let output = `<div class= "item expanded" data-item-id="${bookmark.id}"><button>Visit Site</button>
     <h3>${bookmark.title}:</h3> <p>${bookmark.desc}</p><p>${bookmark.rating}: </p>`;
   for (let i = 1; i <= 5; i++)
     if (i <= bookmark.rating)

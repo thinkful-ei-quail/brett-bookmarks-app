@@ -1,4 +1,5 @@
 import $ from "jquery";
+import display from "./display.js";
 
 const BASEURL = `https://thinkful-list-api.herokuapp.com/brett/bookmarks`;
 
