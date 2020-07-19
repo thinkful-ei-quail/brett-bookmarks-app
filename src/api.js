@@ -1,11 +1,9 @@
-'use strict';
-
 import $ from "jquery";
 
-const BASEURL = `https://thinkful-list-api.herokuapp.com/brett/bookmarks`
+const BASEURL = `https://thinkful-list-api.herokuapp.com/brett/bookmarks`;
 
 function getAllItems() {
-    return callAPI(`${BASEURL}`)
+    return callAPI(`${BASEURL}`);
 }
 
 function updateBookmark(id, updatedBookmark) {
@@ -31,14 +29,14 @@ function createBookmark(bookmark) {
     });
 }
 
-const findAndUpdate = function(id, newData) { //from shopping list for reference
+function findAndUpdate(id, newData) { //from shopping list for reference
     const currentItem = this.findById(id);
     Object.assign(currentItem, newData);
 };
 
 function callAPI(...args) {
     let error; ////////////////
-    console.log("args in api call", ...args) ///////////////
+    console.log("args in api call", ...args); ///////////////
     return fetch(...args)
         .then(response => {
             if (!response.ok) { throw new Error(response.statusText); }
@@ -48,7 +46,7 @@ function callAPI(...args) {
             return items;
         }).catch(err => {
             $('#js-error-message').text(`Something went wrong: ${err.message}`);
-        })
+        });
 }
 
 export default {
@@ -57,4 +55,4 @@ export default {
     updateBookmark,
     createBookmark
 
-}
+};

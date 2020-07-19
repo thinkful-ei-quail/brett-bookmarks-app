@@ -1,6 +1,4 @@
-'use strict';
-
-import $ from "jquery"
+import $ from "jquery";
 
 let bookmarks = [];
 let adding = false;
@@ -12,12 +10,10 @@ const findById = function(id) {
 };
 
 function toggleExpanded(object) {
-    console.log(`attempting toggle expandof ${JSON.stringify(object)}`);
     object.expanded = !object.expanded;
-    console.log(`toggled expandof ${JSON.stringify(object)} `);
-};
+}
 
-const getItemIdFromElement = function(item) {
+function getItemIdFromElement(item) {
     return $(item)
         .closest('.item')
         .data('item-id');
@@ -31,7 +27,7 @@ function packObj(title, rating, url, desc) {
         description: desc,
         expanded: false
     };
-};
+}
 
 export default {
     bookmarks,
