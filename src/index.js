@@ -15,7 +15,7 @@ const eventListeners = () => {
   handleFilterByRating();
   handleItemClick();
   handleNewButtonClick();
-  handleAddDoneButtonClick();
+  handleAddCancelButtonClick();
   handleAddCreateButtonClick();
   handleTrashButtonClick();
   handleExpandedItemClick();
@@ -29,7 +29,7 @@ const handleFilterByRating = () => {
   });
 };
 
-const handleAddDoneButtonClick = () => {
+const handleAddCancelButtonClick = () => {
   $("body").on("click", "#addCancel", (event) => {
     event.preventDefault();
     localStore.adding = false;

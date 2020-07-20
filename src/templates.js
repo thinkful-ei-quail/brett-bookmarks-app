@@ -19,7 +19,7 @@ const addScreen = `
 <header>My Bookmarks</header>
     <div class="container">
         <h3>Add new bookmark:</h3>
-        <textarea id="addURL">http://dummy.url.com</textarea>
+        <textarea id="addURL" placeholder="http://dummy.url.com" autofocus=true></textarea>
         <div>
             <textarea id="addTitle"></textarea>
             <div class= "addStars">
@@ -29,9 +29,10 @@ const addScreen = `
                 <span class="fa fa-star"></span>
                 <span class="fa fa-star"></span>
             </div>
-            <textarea id="addDescription"></textarea>
+            <textarea id="addDescription" placeholder="Title" > </textarea>
+            <button id="addCancel">Cancel</button>
             <button id="addCreate">Create</button>
-            <button id="addCancel">Done</button>
+    
             <p id="js-error-message"></p>
         </div>
     </div>

@@ -2,6 +2,8 @@ body {
   border: 2px solid black;
   padding: 1%;
   margin: 0;
+  background-color: lightgray;
+  height: 100vh;
 }
 
 header {
@@ -17,7 +19,6 @@ header {
 .head {
   display: flex;
   flex-direction: row;
-  flex: 1;
   justify-content: space-evenly;
 }
 
@@ -31,6 +32,49 @@ div {
 .container {
   display: flex;
   flex-direction: column;
+  background-color: white;
+  height: 89%;
+}
+
+.short {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  background-color: lightgray;
+}
+
+.expandedWindow {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 300px;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  width: 99%;
+  margin-top: 2px;
+}
+
+.expandedWindow .stars {
+  font-size: 36;
+}
+
+.description {
+  font-size: 18px;
+  height: 80%;
+  overflow: scroll;
+}
+
+.expanded {
+  background-color: lightgray;
+}
+
+.stars {
+  width: auto;
+  padding: 1%;
+  margin: 0;
+  border: none;
+  font-size: 16px;
 }
 
 .window {
@@ -40,12 +84,19 @@ div {
 
 .expandedHeader {
   margin: 0;
-  padding: 0;
+  padding: 1%;
   display: flex;
   border: 1px solid black;
-  width: 100%;
-  background-color: rgb(102, 131, 131);
-  justify-content: center;
+  width: 97%;
+  background-color: rgb(55, 60, 66);
+  justify-content: space-between;
+  font-size: 24px;
+  color: white;
+}
+
+.addStars {
+  font-size: 32px;
+  width: 50%;
 }
 
 h3 {
