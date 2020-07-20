@@ -14,16 +14,6 @@ const getAllItems = () => {
   });
 };
 
-const refreshList = () => {
-  //let bookmarks = getAllItems()
-
-  for (let i = 0; i < bookmarks.length; i++) {
-    localStore.bookmarks[i] = bookmarks[i];
-    localStore.bookmarks[i].expanded = false;
-    console.log(localStore.bookmarks[i]);
-  }
-};
-
 const createBookmark = (bookmark) => {
   const newBookmark = JSON.stringify(bookmark);
   console.log("from create bookmark: ", newBookmark);
@@ -76,5 +66,4 @@ export default {
   getAllItems,
   createBookmark,
   deleteBookmark,
-  refreshList,
 };

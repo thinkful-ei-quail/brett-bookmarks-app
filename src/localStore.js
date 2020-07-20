@@ -4,6 +4,7 @@ let bookmarks = [];
 let adding = false;
 let error = null;
 let filter = 0;
+let addStars = 0;
 
 function findById(id) {
   return this.bookmarks.find((currentItem) => currentItem.id === id);
@@ -15,6 +16,10 @@ const toggleExpanded = (object) => {
 
 const getItemIdFromElement = (item) => {
   return $(item).closest(".item").data("item-id");
+};
+
+const getItemValueFromElement = (item) => {
+  return $(item).closest(".dropdown").data("value");
 };
 
 const packObj = (title, rating, url, desc) => {
@@ -36,4 +41,5 @@ export default {
   toggleExpanded,
   getItemIdFromElement,
   packObj,
+  getItemValueFromElement,
 };

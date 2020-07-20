@@ -16,6 +16,10 @@ header {
   border: 2px solid black;
 }
 
+textarea {
+  width: 96%;
+}
+
 .head {
   display: flex;
   flex-direction: row;
@@ -34,6 +38,7 @@ div {
   flex-direction: column;
   background-color: white;
   height: 89%;
+  overflow: scroll;
 }
 
 .short {
@@ -41,6 +46,10 @@ div {
   justify-content: space-between;
   font-size: 24px;
   background-color: lightgray;
+}
+
+#addTitle {
+  width: auto;
 }
 
 .expandedWindow {

@@ -19,14 +19,7 @@ const eventListeners = () => {
   handleAddCreateButtonClick();
   handleTrashButtonClick();
   handleExpandedItemClick();
-};
-
-const handleFilterByRating = () => {
-  $("body").on("click", ".head", (event) => {
-    event.preventDefault();
-    localStore.filterRating = parseInt($(event.target).val());
-    display.render();
-  });
+  handleAddStars();
 };
 
 const handleAddCancelButtonClick = () => {
@@ -92,6 +85,21 @@ const handleExpandedItemClick = () => {
     const currentBook = localStore.findById(id);
     localStore.toggleExpanded(currentBook);
     display.render();
+  });
+};
+
+const handleAddStars = () => {
+  $("body").on("click", ".fa-star", (event) => {
+    event.preventDefault();
+    console.log("clicked");
+  });
+};
+
+const handleFilterByRating = () => {
+  // ! ---- not working yet
+  $("select").on("change", (event) => {
+    event.preventDefault();
+    console.log("filter changed");
   });
 };
 
