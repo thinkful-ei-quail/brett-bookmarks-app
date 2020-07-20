@@ -6,9 +6,13 @@ let error = null;
 let filter = 0;
 
 function findById(id) {
-  // ! Had to be "function" format to not break "this"
   return this.bookmarks.find((currentItem) => currentItem.id === id);
 }
+
+const removeItemsFromLocalStore = (id) => {
+  bookmarks = bookmarks.filter((bookmark) => bookmark.id !== id);
+  console.log("hmmm", bookmarks);
+};
 
 const toggleExpanded = (object) => {
   object.expanded = !object.expanded;
@@ -37,4 +41,5 @@ export default {
   toggleExpanded,
   getItemIdFromElement,
   packObj,
+  removeItemsFromLocalStore,
 };

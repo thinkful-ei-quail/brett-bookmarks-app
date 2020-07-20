@@ -30,8 +30,8 @@ const addScreen = `
                 <span class="fa fa-star"></span>
             </div>
             <textarea id="addDescription"></textarea>
-            <button id="addCancel">Cancel</button>
             <button id="addCreate">Create</button>
+            <button id="addCancel">Done</button>
             <p id="js-error-message"></p>
         </div>
     </div>
