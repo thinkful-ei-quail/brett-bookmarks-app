@@ -16,4 +16,4 @@ I can remove bookmarks from my bookmark list
 
 I receive appropriate feedback when I cannot submit a bookmark
 
-NYI- I can select from a dropdown (a <select> element) a "minimum rating" to filter the list by all bookmarks rated at or above the chosen selection
+NYI- I can select from a dropdown (a select element) a "minimum rating" to filter the list by all bookmarks rated at or above the chosen selection
