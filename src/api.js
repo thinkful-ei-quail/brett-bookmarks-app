@@ -33,6 +33,11 @@ const createBookmark = (bookmark) => {
       "Content-Type": "application/json",
     },
     body: newBookmark,
+  }).then((bookmark) => {
+    console.log("bookmark before expanded", bookmark);
+    bookmark.expanded = false;
+    console.log("bookmark after", bookmark);
+    localStore.bookmarks.unshift(bookmark);
   });
 };
 
@@ -56,10 +61,13 @@ const callAPI = (...args) => {
 };
 
 const deleteBookmark = (id) => {
-  localStore.removeItemsFromLocalStore(id);
   return callAPI(`${BASEURL}/${id}`, {
     method: "DELETE",
     headers: { "Content-Type": "application/json" },
+  }).then((res) => {
+    localStore.bookmarks = localStore.bookmarks.filter(
+      (bookmark) => bookmark.id !== id
+    );
   });
 };
 

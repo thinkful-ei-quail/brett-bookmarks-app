@@ -9,11 +9,6 @@ function findById(id) {
   return this.bookmarks.find((currentItem) => currentItem.id === id);
 }
 
-const removeItemsFromLocalStore = (id) => {
-  bookmarks = bookmarks.filter((bookmark) => bookmark.id !== id);
-  console.log("hmmm", bookmarks);
-};
-
 const toggleExpanded = (object) => {
   object.expanded = !object.expanded;
 };
@@ -41,5 +36,4 @@ export default {
   toggleExpanded,
   getItemIdFromElement,
   packObj,
-  removeItemsFromLocalStore,
 };

@@ -40,12 +40,15 @@ const handleAddDoneButtonClick = () => {
 const handleAddCreateButtonClick = () => {
   $("body").on("click", "#addCreate", (event) => {
     event.preventDefault();
+
     const title = $("#addTitle").val();
     const rating = 4; // TODO newStarRating === 0 ? 1 : newStarRating;
     const url = $("#addURL").val();
     const desc = $("#addDescription").val();
     const newBookmark = localStore.packObj(title, rating, url, desc);
+
     api.createBookmark(newBookmark).then((res) => {
+      console.log("from add button", localStore.bookmarks);
       localStore.adding = false;
       display.render();
     });
