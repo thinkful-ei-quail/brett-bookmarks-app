@@ -1,55 +1,88 @@
 body {
   border: 2px solid black;
-  padding: 1%;
+  padding: 0.25vh;
   margin: 0;
   background-color: lightgray;
-  height: 100vh;
+  height: 99vh;
 }
 
-header {
-  background-color: rgb(126, 139, 139);
-  margin-bottom: 10px;
+#mainHeader {
+  height: 15vh;
   font-size: x-large;
   text-align: center;
-  margin: 2%;
-  padding: 2%;
-  border: 2px solid black;
+  margin: 2hv;
+  padding: 2hv;
 }
 
-textarea {
-  width: 96%;
+h1 {
+  font-size: 5vh;
+  border: 1px solid black;
+  line-height: 10vh;
+  margin: 0;
+  background-color: rgb(126, 139, 139);
 }
 
-.head {
+nav {
+  margin: 0vh;
+  background-color: black;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  padding: 0.25vh;
+}
+nav > * {
+  font-size: 3vh;
 }
 
-div {
-  width: 96%;
-  border: 1px solid black;
-  margin: 1%;
-  padding: 1%;
+button {
+  width: 70vh;
 }
 
-.container {
+main {
+  background-color: antiquewhite;
+  margin: 0;
+  height: 80vh;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0.25vh;
+  padding-left: 0px;
+}
+
+li > * {
+  border: 1px solid rgb(5, 5, 5);
+  font-size: 2.5vh;
+}
+
+h2 {
+  padding: 0px;
+  margin: 1vh;
+}
+
+.bookmarkShort {
+  margin: 0.25vh;
+  border: none;
   display: flex;
-  flex-direction: column;
-  background-color: white;
-  height: 89%;
-  overflow: scroll;
+  justify-content: space-between;
+  padding: 0px;
+  background-color: inherit;
+}
+
+header .expanded {
+  height: 3vh;
+}
+
+.rating {
+  border: 1px solid yellow;
 }
 
 .short {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   font-size: 24px;
   background-color: lightgray;
-}
-
-#addTitle {
-  width: auto;
 }
 
 .expandedWindow {
@@ -78,19 +111,6 @@ div {
   background-color: lightgray;
 }
 
-.stars {
-  width: auto;
-  padding: 1%;
-  margin: 0;
-  border: none;
-  font-size: 16px;
-}
-
-.window {
-  height: 300px;
-  justify-content: center;
-}
-
 .expandedHeader {
   margin: 0;
   padding: 1%;
@@ -109,6 +129,7 @@ div {
 }
 
 h3 {
+  font-size: 16px;
   padding: 0;
 }
 

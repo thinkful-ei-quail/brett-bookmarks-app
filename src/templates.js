@@ -1,10 +1,9 @@
-const listHeader = `<header>
+const listHeader = `
+<header id="mainHeader">
 <title>My Bookmarks</title>
-My Bookmarks
-</header>
-<div class="container">
-<form class="head">
-    <button id="newBookmark">+New <i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
+<h1>My Bookmarks</h1>
+<nav>
+    <button id="newBookmark"><label for="newBookmark">+New</label></button>
     <select id="filter" name="rating">
         <option disabled value></option>
         <option>Filter by rating:</option>
@@ -14,7 +13,11 @@ My Bookmarks
         <option value=2>2 stars & above</option>
         <option value=1>1 star & above</option>
     </select>
-</form>`;
+</nav>
+</header>
+<main>
+<ul>
+<form>`;
 
 const addScreen = `
 <header>My Bookmarks</header>
@@ -37,7 +40,7 @@ const addScreen = `
             <p id="js-error-message"></p>
         </div>
     </div>
-</div>
+</main>
 `;
 
 export default {

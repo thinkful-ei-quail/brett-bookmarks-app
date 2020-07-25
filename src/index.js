@@ -15,7 +15,9 @@ const eventListeners = () => {
   handleFilterByRating();
   handleItemClick();
   handleNewButtonClick();
-  handleAddCancelButtonClick();
+  $("body").on("click", "#addCancel", (event) => {
+    handleAddCancelButtonClick();
+  });
   handleAddCreateButtonClick();
   handleTrashButtonClick();
   handleExpandedItemClick();
@@ -23,11 +25,9 @@ const eventListeners = () => {
 };
 
 const handleAddCancelButtonClick = () => {
-  $("body").on("click", "#addCancel", (event) => {
-    event.preventDefault();
-    localStore.adding = false;
-    display.render();
-  });
+  event.preventDefault();
+  localStore.adding = false;
+  display.render();
 };
 
 const handleAddCreateButtonClick = () => {
