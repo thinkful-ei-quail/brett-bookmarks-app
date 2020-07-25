@@ -1,4 +1,5 @@
 const listHeader = `<header>
+<title>My Bookmarks</title>
 My Bookmarks
 </header>
 <div class="container">

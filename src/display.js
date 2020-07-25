@@ -1,7 +1,6 @@
 import $ from "jquery";
 import templates from "./templates.js";
 import localStore from "./localStore.js";
-import api from "./api.js";
 
 const render = () => {
   if (localStore.adding) {
