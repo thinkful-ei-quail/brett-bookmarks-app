@@ -7,6 +7,7 @@ Bookmark App: Displays User-entered bookmarks
 Bookmarks must include Title, URL, a rating and description
 
 As a user:
+
 -I can add bookmarks to my bookmark list. :
 -I can see a list of my bookmarks when I first open the app
 All bookmarks in the list default to a "condensed" view showing only title and rating
