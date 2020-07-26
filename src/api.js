@@ -24,15 +24,12 @@ const createBookmark = (bookmark) => {
     },
     body: newBookmark,
   }).then((bookmark) => {
-    console.log("bookmark before expanded", bookmark);
     bookmark.expanded = false;
-    console.log("bookmark after", bookmark);
     localStore.bookmarks.unshift(bookmark);
   });
 };
 
 const callAPI = (...args) => {
-  let error; ////////////////
   console.log("args in api call", ...args); ///////////////
   return fetch(...args)
     .then((response) => {
@@ -46,7 +43,8 @@ const callAPI = (...args) => {
       return items;
     })
     .catch((err) => {
-      $("#js-error-message").text(`Something went wrong: ${err.message}`);
+      $(".js-error-message").text(`Something went wrong: ${err.message}`);
+      return Promise.reject(err);
     }); // TODO --- Error window thingy
 };
 

@@ -14,11 +14,17 @@ const main = () => {
 const eventListeners = () => {
   handleFilterByRating();
   handleItemClick();
-  handleNewButtonClick();
+  $("body").on("click", "#newBookmark", (event) => {
+    handleNewButtonClick();
+  });
+
   $("body").on("click", "#addCancel", (event) => {
     handleAddCancelButtonClick();
   });
-  handleAddCreateButtonClick();
+  $("body").on("click", "#addCreate", (event) => {
+    handleAddCreateButtonClick();
+  });
+
   handleTrashButtonClick();
   handleExpandedItemClick();
   handleAddStars();
@@ -31,29 +37,25 @@ const handleAddCancelButtonClick = () => {
 };
 
 const handleAddCreateButtonClick = () => {
-  $("body").on("click", "#addCreate", (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    const title = $("#addTitle").val();
-    const rating = 4; // TODO newStarRating === 0 ? 1 : newStarRating;
-    const url = $("#addURL").val();
-    const desc = $("#addDescription").val();
-    const newBookmark = localStore.packObj(title, rating, url, desc);
+  const title = $("#addTitle").val();
+  const rating = 4; // TODO newStarRating === 0 ? 1 : newStarRating;
+  const url = $("#addURL").val();
+  const desc = $("#addDescription").val();
+  const newBookmark = localStore.packObj(title, rating, url, desc);
 
-    api.createBookmark(newBookmark).then((res) => {
-      console.log("from add button", localStore.bookmarks);
-      localStore.adding = false;
-      display.render();
-    });
+  api.createBookmark(newBookmark).then((res) => {
+    console.log("from add button", localStore.bookmarks);
+    localStore.adding = false;
+    display.render();
   });
 };
 
 const handleNewButtonClick = () => {
-  $("body").on("click", "#newBookmark", (event) => {
-    event.preventDefault();
-    localStore.adding = true;
-    display.render();
-  });
+  event.preventDefault();
+  localStore.adding = true;
+  display.render();
 };
 
 const handleTrashButtonClick = () => {
