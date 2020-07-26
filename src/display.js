@@ -25,7 +25,7 @@ const constructListScreen = () => {
 };
 
 const shortBookmark = (bookmark) => {
-  let output = `<li class= "item short" data-item-id="${bookmark.id}"><button class="bookmarkShort"><h2>${bookmark.title}</h2>`;
+  let output = `<li class= "item short" data-item-id="${bookmark.id}"><button class="bookmarkBtn"><h2>${bookmark.title}</h2>`;
   return output + generateStars(bookmark.rating) + `</button></li>`;
 };
 
@@ -40,10 +40,21 @@ const generateStars = (rating) => {
 const expandedBookmark = (bookmark) => {
   console.log(bookmark); //////////////////////////////
   let output = `<li class= "item expanded" data-item-id="${bookmark.id}">
-    <header class="expandedHeader">${bookmark.title}:<i class="fa fa-trash" aria-hidden="true"></i></header>
-    <div class="expandedWindow"><button id="visitSite">Visit Site</button>
-    <textarea class="description">${bookmark.desc}</textarea><div class="stars">`;
-  return output + generateStars(bookmark.rating) + `</div></article>`;
+    
+    <header class="expandedHeader">
+      <button class="bookmarkBtn">
+        <h2>${bookmark.title}</h2>
+      </button>
+      <button class="trashCan"><i class="fa fa-trash" aria-hidden="true"></i></button>
+    </header>
+    <div class="expandedWindow">
+    <article class="description">${bookmark.desc}</article>
+    <footer class="expandedFooter">
+    <button class="visitSite">Visit Site</button>
+    ${generateStars(bookmark.rating)}
+    </footer>`;
+
+  return output;
 };
 
 export default {
