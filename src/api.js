@@ -52,11 +52,16 @@ const deleteBookmark = (id) => {
   return callAPI(`${BASEURL}/${id}`, {
     method: "DELETE",
     headers: { "Content-Type": "application/json" },
-  }).then((res) => {
-    localStore.bookmarks = localStore.bookmarks.filter(
-      (bookmark) => bookmark.id !== id
-    );
-  });
+  })
+    .then((res) => {
+      localStore.bookmarks = localStore.bookmarks.filter(
+        (bookmark) => bookmark.id !== id
+      );
+    })
+    .catch((err) => {
+      $(".js-error-message").text(`Something went wrong: ${err.message}`);
+      return Promise.reject(err);
+    });
 };
 
 export default {

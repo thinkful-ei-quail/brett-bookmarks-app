@@ -12,35 +12,36 @@ const main = () => {
 };
 
 const eventListeners = () => {
-  handleFilterByRating();
-  handleItemClick();
-  $("body").on("click", "#newBookmark", (event) => {
-    handleNewButtonClick();
-  });
-
-  $("body").on("click", "#addCancel", (event) => {
-    handleAddCancelButtonClick();
-  });
-  $("body").on("click", "#addCreate", (event) => {
-    handleAddCreateButtonClick();
-  });
-
-  handleTrashButtonClick();
-  handleExpandedItemClick();
-  handleAddStars();
+  $("body").on("change", "#filter", (e) => handleFilterByRating(e));
+  $("body").on("change", "#setRating", (e) => handleSetRating(e));
+  $("body").on("click", ".shortBookmarkBtn", (e) => handleItemClick(e));
+  $("body").on("click", "#newBookmark", (e) => handleNewButtonClick(e));
+  $("body").on("click", "#addCancel", (e) => handleAddCancelButtonClick(e));
+  $("body").on("click", "#addCreate", (e) => handleAddCreateButtonClick(e));
+  $("body").on("click", ".trashCan", (e) => handleDeleteButtonClick(e));
+  $("body").on("click", ".expBookmarkBtn", (e) => handleExpItemClick(e));
+  // $("body").on("click", ".visitSite", (e) => handleVisitSiteClick(e));
 };
 
-const handleAddCancelButtonClick = () => {
-  event.preventDefault();
+const handleAddCancelButtonClick = (e) => {
+  e.preventDefault();
   localStore.adding = false;
   display.render();
 };
 
-const handleAddCreateButtonClick = () => {
-  event.preventDefault();
+const handleSetRating = (e) => {
+  e.preventDefault();
+}; // TODO
+
+const handleVisitSiteClick = (e) => {
+  e.preventDefault();
+}; // TODO
+
+const handleAddCreateButtonClick = (e) => {
+  e.preventDefault();
 
   const title = $("#addTitle").val();
-  const rating = 4; // TODO newStarRating === 0 ? 1 : newStarRating;
+  const rating = $("#setRating").val();
   const url = $("#addURL").val();
   const desc = $("#addDescription").val();
   const newBookmark = localStore.packObj(title, rating, url, desc);
@@ -52,57 +53,42 @@ const handleAddCreateButtonClick = () => {
   });
 };
 
-const handleNewButtonClick = () => {
-  event.preventDefault();
+const handleNewButtonClick = (e) => {
+  e.preventDefault();
   localStore.adding = true;
   display.render();
 };
 
-const handleTrashButtonClick = () => {
-  $("body").on("click", ".fa-trash", (event) => {
-    event.preventDefault();
-    const id = localStore.getItemIdFromElement(event.currentTarget);
-    api.deleteBookmark(id).then((res) => {
-      console.log("delete returned?");
-      display.render();
-    });
-  });
-};
-
-const handleItemClick = () => {
-  $("body").on("click", ".short", (event) => {
-    event.preventDefault();
-    const id = localStore.getItemIdFromElement(event.currentTarget);
-    const currentBook = localStore.findById(id);
-    console.log(currentBook);
-    localStore.toggleExpanded(currentBook);
+const handleDeleteButtonClick = (e) => {
+  e.preventDefault();
+  const id = localStore.getItemIdFromElement(e.currentTarget);
+  api.deleteBookmark(id).then((res) => {
     display.render();
   });
 };
 
-const handleExpandedItemClick = () => {
-  $("body").on("click", ".expandedHeader", (event) => {
-    event.preventDefault();
-    const id = localStore.getItemIdFromElement(event.currentTarget);
-    const currentBook = localStore.findById(id);
-    localStore.toggleExpanded(currentBook);
-    display.render();
-  });
+const handleItemClick = (e) => {
+  e.preventDefault();
+  const id = localStore.getItemIdFromElement(e.currentTarget);
+  const currentBook = localStore.findById(id);
+  console.log(currentBook);
+  localStore.toggleExpanded(currentBook);
+  display.render();
 };
 
-const handleAddStars = () => {
-  $("body").on("click", ".fa-star", (event) => {
-    event.preventDefault();
-    console.log("clicked");
-  });
+const handleExpItemClick = (e) => {
+  e.preventDefault();
+  const id = localStore.getItemIdFromElement(e.currentTarget);
+  const currentBook = localStore.findById(id);
+  localStore.toggleExpanded(currentBook);
+  display.render();
 };
 
-const handleFilterByRating = () => {
-  // ! ---- not working yet
-  $("select").on("change", (event) => {
-    event.preventDefault();
-    console.log("filter changed");
-  });
+const handleFilterByRating = (e) => {
+  e.preventDefault(); // TODO
+  localStore.filter = $("#filter").val();
+  console.log(localStore.filter);
+  display.render();
 };
 
 $(main);
