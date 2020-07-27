@@ -38,12 +38,6 @@ nav > * {
   padding: 0;
 }
 
-.invisible {
-  visibility: hidden;
-  margin: 0;
-  padding: 0;
-}
-
 #newBookmark {
   width: 70vw;
 }
@@ -74,16 +68,27 @@ h2 {
   padding: 0px;
   margin: 1vh 1vw;
   text-overflow: ellipsis;
-  max-width: 70vw;
   overflow: hidden;
   white-space: nowrap;
 }
 
-*/ .bookmarkBtn {
+.bookmarkBtn {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0px;
+  background-color: inherit;
+  width: 100%;
+}
+
+.buttonFont {
+  font-size: 3vh;
+  padding: 0px;
+  margin: 0;
+  text-overflow: ellipsis;
+  max-width: 70vw;
+  overflow: hidden;
+  white-space: nowrap;
   background-color: inherit;
 }
 
@@ -157,7 +162,7 @@ h2 {
 }
 
 .addCreate {
-  width: 70vh;
+  width: 70vw;
   border: 2px solid black;
 }
 
@@ -191,7 +196,6 @@ h3 {
 }
 
 #addCancel {
-  position: absolute;
   bottom: 4vh;
   left: 2.75vw;
   width: 93vw;
@@ -204,7 +208,6 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 93vw;
   margin: 0.5vh 0.5vw;
 }
 
@@ -233,4 +236,23 @@ h3 {
 }
 
 @media screen and (min-width: 550px) {
+  main,
+  nav {
+    width: 70vw;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body > * {
+    max-width: 70vw;
+  }
+  #addCancel,
+  #addURL,
+  #addTitle,
+  #addDescription {
+    width: 70vw;
+  }
 }

@@ -23,6 +23,7 @@ const getItemValueFromElement = (item) => {
 };
 
 const packObj = (title, rating, url, desc) => {
+  if (rating < 1) rating = 1;
   return {
     title: title,
     rating: rating,

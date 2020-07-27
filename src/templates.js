@@ -5,7 +5,7 @@ const listHeader = `
 <nav>
     <button id="newBookmark">+New</button>
     <select id="filter" name="rating">
-        <option value=1 selected disabled hidden>Filter by Rating</option>
+        <option value=0 selected>Filter by Rating</option>
         <option value=5>5 stars</option>
         <option value=4>4 stars & above</option>
         <option value=3>3 stars & above</option>
@@ -24,9 +24,9 @@ const addScreen = `
 <header id="mainHeader">
 <h1>My Bookmarks</h1>
 <nav>
-    <button id="addCreate"><label for "addCreate">Create</label></button>
+    <button id="addCreate">Create</button>
     <select id="setRating" name="setRating">
-        <option value=3 selected disabled hidden>Rate (default 3)</option>
+        <option value=1 selected disabled hidden>Rate bookmark</option>
         <option value=5>Rate 5 stars</option>
         <option value=4>Rate 4 stars</option>
         <option Value=3>Rate 3 stars</option>
@@ -40,7 +40,7 @@ const addScreen = `
         <h3>Add new bookmark:</h3>            
     </header>
             <label for="addTitle">Title: </label>
-            <input id="addTitle" rows="1"></input>
+            <input id="addTitle"></input>
             <label for="addURL">URL: </label>
             <input id="addURL" placeholder="https://"></input>
 

@@ -28,10 +28,9 @@ const constructListScreen = () => {
 
 const shortBookmark = (bookmark) => {
   let output = `<li class= "item short" data-item-id="${bookmark.id}">
-  <h2><button class="bookmarkBtn shortBookmarkBtn">
-  ${bookmark.title}
-  </button></h2>`;
-  return output + generateStars(bookmark.rating) + `</li>`;
+  <button class="bookmarkBtn shortBookmarkBtn">
+  <span class="buttonFont">${bookmark.title}</span>`;
+  return output + generateStars(bookmark.rating) + `</button></li>`;
 };
 
 const generateStars = (rating) => {
@@ -51,7 +50,7 @@ const expandedBookmark = (bookmark) => {
       <button class="trashCan"><i class="fa fa-trash" aria-label="Delete"></i></button>
     </header>
     <div class="expandedWindow">
-    <h3 class="bookmarkTitle">${bookmark.title}</h3>
+    <h2 class="bookmarkTitle">${bookmark.title}</h2>
     <article class="description">${bookmark.desc}</article>
     <footer class="expandedFooter">
     <a href="${bookmark.url}" target="_blank" class="visitSite">Visit Site</a>
