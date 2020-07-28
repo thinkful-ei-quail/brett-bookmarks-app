@@ -43,7 +43,7 @@ nav > * {
   width: 70vw;
 }
 
-main {
+.mainWindow {
   background-color: antiquewhite;
   margin: 0;
   height: 80vh;

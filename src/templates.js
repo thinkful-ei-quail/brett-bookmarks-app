@@ -51,6 +51,7 @@ const addScreen = `
     </div>
     </form>    
 <footer class="js-error-message"></footer>
+</main>
 `;
 
 export default {
