@@ -20,7 +20,6 @@ const eventListeners = () => {
   $("body").on("click", "#addCreate", (e) => handleAddCreateButtonClick(e));
   $("body").on("click", ".trashCan", (e) => handleDeleteButtonClick(e));
   $("body").on("click", ".expBookmarkBtn", (e) => handleExpItemClick(e));
-  // $("body").on("click", ".visitSite", (e) => handleVisitSiteClick(e));
 };
 
 const handleAddCancelButtonClick = (e) => {

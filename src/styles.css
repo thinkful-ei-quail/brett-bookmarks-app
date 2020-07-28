@@ -8,6 +8,7 @@ body {
   margin: 0;
   background-color: lightgray;
   height: 100vh;
+  min-width: 300px;
 }
 
 #mainHeader {
@@ -236,23 +237,7 @@ h3 {
 }
 
 @media screen and (min-width: 550px) {
-  main,
   nav {
-    width: 70vw;
-  }
-  body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-  }
-  body > * {
-    max-width: 70vw;
-  }
-  #addCancel,
-  #addURL,
-  #addTitle,
-  #addDescription {
-    width: 70vw;
   }
 }

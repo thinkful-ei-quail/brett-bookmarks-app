@@ -4,9 +4,9 @@ import localStore from "./localStore.js";
 
 const render = () => {
   if (localStore.adding) {
-    $("body").html(constructAddScreen());
+    $("main").html(constructAddScreen());
   } else {
-    $("body").html(constructListScreen());
+    $("main").html(constructListScreen());
   }
 };
 
@@ -23,7 +23,9 @@ const constructListScreen = () => {
       else output += shortBookmark(localStore.bookmarks[i]);
     }
   }
-  return output + `</ul></form></main>`;
+  return (
+    output + `</ul></form></div><footer class="js-error-message"></footer>`
+  );
 };
 
 const shortBookmark = (bookmark) => {
@@ -46,8 +48,7 @@ const expandedBookmark = (bookmark) => {
     <header class="expandedHeader">
       <button class="bookmarkBtn expBookmarkBtn">
         Close Tab
-      </button>
-      <button class="trashCan"><i class="fa fa-trash" aria-label="Delete"></i></button>
+      <button aria-label="Delete" class="trashCan"><i class="fa fa-trash" aria-hidden="true"></i></button>
     </header>
     <div class="expandedWindow">
     <h2 class="bookmarkTitle">${bookmark.title}</h2>

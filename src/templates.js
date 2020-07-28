@@ -14,7 +14,7 @@ const listHeader = `
     </select>
 </nav>
 </header>
-<main>
+<div class="mainWindow">
 <form>
 <ul>
 `;
@@ -23,8 +23,9 @@ const addScreen = `
 
 <header id="mainHeader">
 <h1>My Bookmarks</h1>
+<form>
 <nav>
-    <button id="addCreate">Create</button>
+    <button type="submit" aria-label="Create Bookmark" id="addCreate">Create</button>
     <select id="setRating" name="setRating">
         <option value=1 selected disabled hidden>Rate bookmark</option>
         <option value=5>Rate 5 stars</option>
@@ -34,20 +35,20 @@ const addScreen = `
         <option value=1>Rate 1 star</option>
     </select>
 </nav>
-</header><form>
-    <main id="addWindow">
+</header>
+    <div id="addWindow">
     <header id="addHeader">
         <h3>Add new bookmark:</h3>            
     </header>
             <label for="addTitle">Title: </label>
-            <input id="addTitle"></input>
+            <input aria-label= "title" id="addTitle"></input>
             <label for="addURL">URL: </label>
-            <input id="addURL" placeholder="https://"></input>
+            <input aria-label="add URL" id="addURL" placeholder="https://"></input>
 
             <textarea id="addDescription" placeholder="Description" rows="16"> </textarea>
             <button id="addCancel">Cancel</button>
 
-    </main>
+    </div>
     </form>    
 <footer class="js-error-message"></footer>
 `;
