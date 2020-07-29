@@ -32,10 +32,6 @@ const handleSetRating = (e) => {
   e.preventDefault();
 }; // TODO
 
-const handleVisitSiteClick = (e) => {
-  e.preventDefault();
-}; // TODO
-
 const handleAddCreateButtonClick = (e) => {
   e.preventDefault();
 
