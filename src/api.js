@@ -25,7 +25,7 @@ const createBookmark = (bookmark) => {
     body: newBookmark,
   }).then((bookmark) => {
     bookmark.expanded = false;
-    localStore.bookmarks.unshift(bookmark);
+    localStore.bookmarks.push(bookmark);
   });
 };
 
