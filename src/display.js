@@ -25,7 +25,7 @@ const constructListScreen = () => {
   }
   return (
     output +
-    `</ul></form></div><footer class="js-error-message">Test</footer></main>`
+    `</ul></form></div><footer class="js-error-message"></footer></main>`
   );
 };
 
